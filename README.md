@@ -1,4 +1,4 @@
-# Automated-Market-Opening-Scheduler
+# Automated Market Opening Scheduler
 ## Goal:
 The goal of this project is to take a complex new problem and formulate and solve it as search. Formulation as search is an integral skill of 
 AI that will come in handy whenever you are faced with a new problem. Heuristic search will allow you to find optimal solutions. Local search may 
@@ -28,9 +28,61 @@ The constant C trades off the importance of semantic coherence of one market ver
 
 The goal is to find a schedule with the maximum goodness.
 
-Input:
-Line 1: k: total types of shops opening in one time slot in one market
-Line 2: m: number of parallel markets
-Line 3: T: number of time slots
-Line 4: C: trade-off constant
-Starting on the fifth line we have a space separated list of distances between a type of shop and rest others. Note that d(x,y) = d(y,x). Also, all d(x,x) = 0.
+## Input Format:
+
+Line 1: k - total types of shops opening in one time slot in one market<br/>
+Line 2: m - number of parallel markets<br/>
+Line 3: T - number of time slots<br/>
+Line 4: C - trade-off constant<br/>
+Starting on the fifth line we have a space separated list of distances between a type of shop and rest others.<br/>Note that d(x,y) = d(y,x). Also, all d(x,x) = 0.
+
+## Output Format:
+Output:  Your algorithm should return the max-goodness schedule.
+
+Space separated list of shop ids (i.e, shop’s type ids), where time slots are separated by bars and parallel markets are separated by line.<br/>
+
+## Sample Testcases:
+
+#### Sample Input 0
+```bash
+2
+2
+1
+1
+0 0.4 0.8 1
+0.4 0 0.6 0.7
+0.8 0.6 0 0.3
+1 0.7 0.3 0
+```
+#### Sample Output 0
+```bash
+1 2
+3 4
+```
+
+#### Sample Input 1
+```bash
+2
+2
+3
+1.0
+0 0.0 0.8 0.9 0.2 0.1 1.0 0.8 0.2 0.3 0.8 0.8
+0.0 0 0.8 1.0 0.2 0.1 0.8 0.9 0.2 0.2 0.8 1.0
+0.8 0.8 0 0.1 0.8 0.9 0.2 0.2 0.7 0.9 0.0 0.2
+0.9 1.0 0.1 0 0.7 0.9 0.0 0.2 0.9 0.9 0.1 0.1
+0.2 0.2 0.8 0.7 0 0.1 0.8 1.0 0.3 0.2 0.9 0.7
+0.1 0.1 0.9 0.9 0.1 0 0.8 0.9 0.1 0.2 0.8 0.9
+1.0 0.8 0.2 0.0 0.8 0.8 0 0.0 0.9 0.8 0.1 0.0
+0.8 0.9 0.2 0.2 1.0 0.9 0.0 0 0.8 0.9 0.2 0.0
+0.2 0.2 0.7 0.9 0.3 0.1 0.9 0.8 0 0.2 0.8 0.8
+0.3 0.2 0.9 0.9 0.2 0.2 0.8 0.9 0.2 0 0.8 0.9
+0.8 0.8 0.0 0.1 0.9 0.8 0.1 0.2 0.8 0.8 0 0.3
+0.8 1.0 0.2 0.1 0.7 0.9 0.0 0.0 0.8 0.9 0.3 0
+```
+#### Sample Output 1
+```bash
+1 2 | 5 6 | 9 10
+3 4 | 7 8 | 11 12
+```
+
+
